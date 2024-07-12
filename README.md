@@ -7,7 +7,7 @@ Decentralized Prescription Management is a dApp built on the CoreDao blockchain 
 ## Features
 
 - **Hospital Registration**: Hospitals can register on the platform to create prescriptions for patients.
-- **Pharmacy Registration**: Pharmacies can register to mark prescriptions as filled.
+- **Pharmacy Registration**: Pharmacies can register to fill the prescriptions.
 - **Patient Prescription History**: Patients can view their prescription history.
 - **Prescription Creation**: Hospitals can create prescriptions for patients.
 - **Prescription Fulfillment**: Pharmacies can mark prescriptions as filled.
