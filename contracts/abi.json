@@ -1,0 +1,420 @@
+{
+   "PrescriptionManagement": [
+      {
+         "inputs": [],
+         "stateMutability": "nonpayable",
+         "type": "constructor"
+      },
+      {
+         "anonymous": false,
+         "inputs": [
+            {
+               "indexed": true,
+               "internalType": "address",
+               "name": "hospitalAddress",
+               "type": "address"
+            }
+         ],
+         "name": "HospitalRegistered",
+         "type": "event"
+      },
+      {
+         "anonymous": false,
+         "inputs": [
+            {
+               "indexed": true,
+               "internalType": "address",
+               "name": "pharmacyAddress",
+               "type": "address"
+            }
+         ],
+         "name": "PharmacyRegistered",
+         "type": "event"
+      },
+      {
+         "anonymous": false,
+         "inputs": [
+            {
+               "indexed": true,
+               "internalType": "address",
+               "name": "pharmacyAddress",
+               "type": "address"
+            },
+            {
+               "indexed": true,
+               "internalType": "uint256",
+               "name": "prescriptionIndex",
+               "type": "uint256"
+            }
+         ],
+         "name": "PrescriptionFulfilled",
+         "type": "event"
+      },
+      {
+         "anonymous": false,
+         "inputs": [
+            {
+               "indexed": true,
+               "internalType": "address",
+               "name": "hospitalAddress",
+               "type": "address"
+            },
+            {
+               "indexed": false,
+               "internalType": "string",
+               "name": "prescriptionData",
+               "type": "string"
+            }
+         ],
+         "name": "PrescriptionWritten",
+         "type": "event"
+      },
+      {
+         "inputs": [
+            {
+               "internalType": "address",
+               "name": "_patientAddress",
+               "type": "address"
+            }
+         ],
+         "name": "getPrescriptionHistory",
+         "outputs": [
+            {
+               "components": [
+                  {
+                     "internalType": "address",
+                     "name": "hospitalAddress",
+                     "type": "address"
+                  },
+                  {
+                     "internalType": "address",
+                     "name": "filledBy",
+                     "type": "address"
+                  },
+                  {
+                     "internalType": "string",
+                     "name": "prescriptionData",
+                     "type": "string"
+                  },
+                  {
+                     "internalType": "bool",
+                     "name": "filled",
+                     "type": "bool"
+                  }
+               ],
+               "internalType": "struct PrescriptionManagement.Prescription[]",
+               "name": "",
+               "type": "tuple[]"
+            }
+         ],
+         "stateMutability": "view",
+         "type": "function"
+      },
+      {
+         "inputs": [
+            {
+               "internalType": "address",
+               "name": "",
+               "type": "address"
+            }
+         ],
+         "name": "hospitals",
+         "outputs": [
+            {
+               "internalType": "bool",
+               "name": "isRegistered",
+               "type": "bool"
+            }
+         ],
+         "stateMutability": "view",
+         "type": "function"
+      },
+      {
+         "inputs": [
+            {
+               "internalType": "address",
+               "name": "_hospitalAddress",
+               "type": "address"
+            }
+         ],
+         "name": "isHospitalRegistered",
+         "outputs": [
+            {
+               "internalType": "bool",
+               "name": "",
+               "type": "bool"
+            }
+         ],
+         "stateMutability": "view",
+         "type": "function"
+      },
+      {
+         "inputs": [
+            {
+               "internalType": "address",
+               "name": "_pharmacyAddress",
+               "type": "address"
+            }
+         ],
+         "name": "isPharmacyRegistered",
+         "outputs": [
+            {
+               "internalType": "bool",
+               "name": "",
+               "type": "bool"
+            }
+         ],
+         "stateMutability": "view",
+         "type": "function"
+      },
+      {
+         "inputs": [
+            {
+               "internalType": "address",
+               "name": "_patientAddress",
+               "type": "address"
+            },
+            {
+               "internalType": "uint256",
+               "name": "_prescriptionIndex",
+               "type": "uint256"
+            }
+         ],
+         "name": "markPrescriptionFilled",
+         "outputs": [],
+         "stateMutability": "nonpayable",
+         "type": "function"
+      },
+      {
+         "inputs": [],
+         "name": "owner",
+         "outputs": [
+            {
+               "internalType": "address",
+               "name": "",
+               "type": "address"
+            }
+         ],
+         "stateMutability": "view",
+         "type": "function"
+      },
+      {
+         "inputs": [
+            {
+               "internalType": "address",
+               "name": "",
+               "type": "address"
+            },
+            {
+               "internalType": "uint256",
+               "name": "",
+               "type": "uint256"
+            }
+         ],
+         "name": "patientPrescriptions",
+         "outputs": [
+            {
+               "internalType": "address",
+               "name": "hospitalAddress",
+               "type": "address"
+            },
+            {
+               "internalType": "address",
+               "name": "filledBy",
+               "type": "address"
+            },
+            {
+               "internalType": "string",
+               "name": "prescriptionData",
+               "type": "string"
+            },
+            {
+               "internalType": "bool",
+               "name": "filled",
+               "type": "bool"
+            }
+         ],
+         "stateMutability": "view",
+         "type": "function"
+      },
+      {
+         "inputs": [
+            {
+               "internalType": "address",
+               "name": "",
+               "type": "address"
+            }
+         ],
+         "name": "pharmacies",
+         "outputs": [
+            {
+               "internalType": "bool",
+               "name": "isRegistered",
+               "type": "bool"
+            }
+         ],
+         "stateMutability": "view",
+         "type": "function"
+      },
+      {
+         "inputs": [],
+         "name": "registerHospital",
+         "outputs": [],
+         "stateMutability": "payable",
+         "type": "function"
+      },
+      {
+         "inputs": [],
+         "name": "registerPharmacy",
+         "outputs": [],
+         "stateMutability": "payable",
+         "type": "function"
+      },
+      {
+         "inputs": [],
+         "name": "registrationVault",
+         "outputs": [
+            {
+               "internalType": "contract IRegistrationVault",
+               "name": "",
+               "type": "address"
+            }
+         ],
+         "stateMutability": "view",
+         "type": "function"
+      },
+      {
+         "inputs": [
+            {
+               "internalType": "address",
+               "name": "_patientAddress",
+               "type": "address"
+            },
+            {
+               "internalType": "string",
+               "name": "_prescriptionData",
+               "type": "string"
+            }
+         ],
+         "name": "writePrescription",
+         "outputs": [],
+         "stateMutability": "nonpayable",
+         "type": "function"
+      }
+   ],
+   "RegistrationVault": [
+      {
+         "inputs": [],
+         "stateMutability": "nonpayable",
+         "type": "constructor"
+      },
+      {
+         "anonymous": false,
+         "inputs": [
+            {
+               "indexed": true,
+               "internalType": "address",
+               "name": "sender",
+               "type": "address"
+            },
+            {
+               "indexed": false,
+               "internalType": "uint256",
+               "name": "amount",
+               "type": "uint256"
+            }
+         ],
+         "name": "RegistrationFeeDeposited",
+         "type": "event"
+      },
+      {
+         "anonymous": false,
+         "inputs": [
+            {
+               "indexed": true,
+               "internalType": "address",
+               "name": "receiver",
+               "type": "address"
+            },
+            {
+               "indexed": false,
+               "internalType": "uint256",
+               "name": "amount",
+               "type": "uint256"
+            }
+         ],
+         "name": "RegistrationFeeWithdrawn",
+         "type": "event"
+      },
+      {
+         "inputs": [],
+         "name": "depositRegistrationFee",
+         "outputs": [],
+         "stateMutability": "payable",
+         "type": "function"
+      },
+      {
+         "inputs": [],
+         "name": "getBalance",
+         "outputs": [
+            {
+               "internalType": "uint256",
+               "name": "",
+               "type": "uint256"
+            }
+         ],
+         "stateMutability": "view",
+         "type": "function"
+      },
+      {
+         "inputs": [],
+         "name": "owner",
+         "outputs": [
+            {
+               "internalType": "address",
+               "name": "",
+               "type": "address"
+            }
+         ],
+         "stateMutability": "view",
+         "type": "function"
+      },
+      {
+         "inputs": [
+            {
+               "internalType": "address",
+               "name": "",
+               "type": "address"
+            }
+         ],
+         "name": "registrationFees",
+         "outputs": [
+            {
+               "internalType": "uint256",
+               "name": "",
+               "type": "uint256"
+            }
+         ],
+         "stateMutability": "view",
+         "type": "function"
+      },
+      {
+         "inputs": [
+            {
+               "internalType": "address",
+               "name": "_receiver",
+               "type": "address"
+            },
+            {
+               "internalType": "uint256",
+               "name": "_amount",
+               "type": "uint256"
+            }
+         ],
+         "name": "withdrawRegistrationFee",
+         "outputs": [],
+         "stateMutability": "nonpayable",
+         "type": "function"
+      }
+   ]
+}
